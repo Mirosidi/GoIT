@@ -1,4 +1,4 @@
-#Перше завдання
+#First task
 
 from datetime import datetime
 
