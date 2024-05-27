@@ -14,6 +14,10 @@ def get_cats_info(path):
         print(f"An error occurred: {e}")
     return cats_info
 
-path = "path.txt"
-cats_info = get_cats_info(path)
-print(cats_info)
+def main():
+    path = "path.txt"
+    cats_info = get_cats_info(path)
+    print(cats_info)
+
+if __name__ == "__main__":
+    main()
