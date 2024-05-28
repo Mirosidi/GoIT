@@ -13,5 +13,10 @@ def total_salary(path):
     average = total / count if count > 0 else 0
     return total, average
 
-total, average = total_salary("D:/Python/GoIT/path.txt")
-print(f"Total amount of salary: {total}, Average salary: {average}")
+def main():
+    path = "path.txt"
+    total, average = total_salary(path)
+    print(f"Total amount of salary: {total}, Average salary: {average}")
+
+if __name__ == "__main__":
+    main()
