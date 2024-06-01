@@ -26,9 +26,19 @@ class Record:
         self.phones = [phone for phone in self.phones if str(phone) != phone_number]
 
     def edit_phone(self, old_phone_number, new_phone_number):
+        try:
+            new_phone = Phone(new_phone_number)
+        except ValueError as e:
+            print(f"Failed to update phone number: {e}")
+            return
+
         for phone in self.phones:
             if str(phone) == old_phone_number:
-                phone.value = new_phone_number
+                phone.value = new_phone.value
+                print(f"Phone number changed from {old_phone_number} to {new_phone_number}")
+                return
+
+        print(f"Phone number {old_phone_number} not found.")
 
     def find_phone(self, phone_number):
         return next((phone for phone in self.phones if str(phone) == phone_number), None)
